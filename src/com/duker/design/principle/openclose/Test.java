@@ -8,8 +8,11 @@ package com.duker.design.principle.openclose;
  */
 public class Test {
     public static void main(String[] args) {
-        ICourse javaCourse = new JavaCourse(01,"java从入门到精通",96d);
-        System.out.println("课程ID："+javaCourse.getId()+" 课程名称："+javaCourse.getName()+" 课程价格："+javaCourse.getPrice());
+        ICourse javaCourse = new JavaDiscountCourse(01,"java从入门到精通",96d);
+
+        JavaDiscountCourse javaDiscountCourse = (JavaDiscountCourse) javaCourse;
+
+        System.out.println("课程ID："+javaCourse.getId()+" 课程名称："+javaCourse.getName()+" 课程打折价格："+javaCourse.getPrice()+" 课程原价: "+javaDiscountCourse.getOriginPrice());
 
     }
 }
